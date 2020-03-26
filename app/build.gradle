@@ -40,6 +40,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':datetime')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$vKotlin"
     implementation "androidx.appcompat:appcompat:$rootProject.vAndroidxAppcompat"
@@ -49,6 +50,9 @@ dependencies {
     testImplementation "junit:junit:$rootProject.vJunit"
     androidTestImplementation "androidx.test.ext:junit:$rootProject.vAndroidxTestJunit"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.vAndroidxTestEspresso"
+
+    //Material
+    implementation "com.google.android.material:material:$rootProject.vGoogleMaterial"
 
     //Timber
     implementation "com.jakewharton.timber:timber:$vTimber"
