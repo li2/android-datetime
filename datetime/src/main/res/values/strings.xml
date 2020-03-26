@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="datetimeLib_days">
+        <item quantity="one">1 day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+
+    <plurals name="datetimeLib_hours">
+        <item quantity="one">1 hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
+</resources>

@@ -44,7 +44,7 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.vAndroidxTestEspresso"
 
     // Date-Time
-    implementation "com.jakewharton.threetenabp:threetenabp:$rootProject.vThreetenabp"
+    api "com.jakewharton.threetenabp:threetenabp:$rootProject.vThreetenabp"
 
     //Timber
     implementation "com.jakewharton.timber:timber:$rootProject.vTimber"
