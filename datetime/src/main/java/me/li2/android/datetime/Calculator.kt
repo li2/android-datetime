@@ -28,7 +28,7 @@ object Calculator {
         return Pair(days.toInt(), hours.toInt())
     }
 
-    /** Return duration in formatted x days and y hours*/
+    /** Return duration in a format "x days and y hours"*/
     fun durationInDaysAndHours(context: Context, from: LocalDateTime, to: LocalDateTime): String {
         val (days, hours) = durationInDaysAndHours(from, to)
         val daysWithUnit = context.resources.getQuantityString(R.plurals.datetimeLib_days, days, days)
