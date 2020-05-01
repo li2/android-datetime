@@ -12,16 +12,17 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="vertical"
-        android:scrollbarAlwaysDrawVerticalTrack="true">
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbars="vertical">
 
         <TextView
             android:id="@+id/resultTextView"
             style="?attr/textAppearanceBody1"
-            android:gravity="center"
             android:layout_width="match_parent"
-            android:lineSpacingExtra="8dp"
             android:layout_height="wrap_content"
+            android:gravity="start|top"
+            android:lineSpacingExtra="8dp"
+            android:padding="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

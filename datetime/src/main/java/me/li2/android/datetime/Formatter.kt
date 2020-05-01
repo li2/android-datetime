@@ -1,5 +1,6 @@
 package me.li2.android.datetime
 
+import android.text.format.DateFormat
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.Month
 import org.threeten.bp.format.DateTimeFormatter
@@ -16,25 +17,22 @@ RFC stands for Request For Comment. RFC is a formal document from the Internet E
 
  https://medium.com/easyread/understanding-about-rfc-3339-for-datetime-formatting-in-software-engineering-940aa5d5f68a
  */
-private const val RFC_DATE_TIME_PATTERN = "EEE, d MMM h:mma"
-private const val ISO_LOCAL_DATE_TIME_PATTERN = "yyyy-MM-dd'T'HH:mm:ss"
 
-fun LocalDateTime.toStringWithPattern(pattern: String): String {
+fun LocalDateTime.toStringWithPattern(
+        pattern: String,
+        locale: Locale = Locale.getDefault(),
+        allowBestLocalized: Boolean = true): String {
     return try {
-        this.format(DateTimeFormatter.ofPattern(pattern))
+        val bestPattern = if (allowBestLocalized) DateFormat.getBestDateTimePattern(locale, pattern) else pattern
+        this.format(DateTimeFormatter.ofPattern(bestPattern, locale))
     } catch (exception: Exception) {
         e(exception, "failed to format datetime: $this with pattern: $pattern")
         this.toString()
     }
 }
 
-fun LocalDateTime.toRfcDateTimeString() = this
-        .toStringWithPattern(RFC_DATE_TIME_PATTERN)
-        .replace("AM", "am")
-        .replace("PM", "pm")
-
-fun LocalDateTime.toIsoLocalDateTimeString() = this
-        .toStringWithPattern(ISO_LOCAL_DATE_TIME_PATTERN)
+fun LocalDateTime.toIsoLocalDateTimeString(): String =
+        this.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
 
 fun Month.fullDisplayName(): String {
     return getDisplayName(TextStyle.FULL, Locale.getDefault())
