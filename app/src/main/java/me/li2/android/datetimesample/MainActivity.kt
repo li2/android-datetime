@@ -71,6 +71,7 @@ class MainActivity : AppCompatActivity() {
                 "hh:mm a"                // 03:16 pm
         ).forEach { pattern ->
             print(pattern) {
+                val default = demoDateTime.toStringWithPattern(pattern, Locale.getDefault(), false)
                 val us = demoDateTime.toStringWithPattern(pattern, Locale.US)
                 val uk = demoDateTime.toStringWithPattern(pattern, Locale.UK)
                 val nz = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -79,7 +80,10 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     ""
                 }
-                "US - $us\nUK - $uk\nNZ - $nz"
+                "Default - $default\n" +
+                        "US - $us\n" +
+                        "UK - $uk\n" +
+                        "NZ - $nz"
             }
         }
 
