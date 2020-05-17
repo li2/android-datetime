@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion vCompileSdk
+    compileSdkVersion androidCompileSdk_version
 
     dataBinding {
         enabled = true
@@ -12,8 +12,8 @@ android {
 
     defaultConfig {
         applicationId 'me.li2.android.datetimesample'
-        minSdkVersion vMinSdk
-        targetSdkVersion vTargetSdk
+        minSdkVersion androidMinSdk_version
+        targetSdkVersion androidTargetSdk_version
         versionCode 1
         versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -42,18 +42,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':datetime')
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$vKotlin"
-    implementation "androidx.appcompat:appcompat:$rootProject.vAndroidxAppcompat"
-    implementation "androidx.core:core-ktx:$rootProject.vAndroidxCoreKtx"
-    implementation "androidx.constraintlayout:constraintlayout:$vAndroidxConstraintlayout"
-
-    testImplementation "junit:junit:$rootProject.vJunit"
-    androidTestImplementation "androidx.test.ext:junit:$rootProject.vAndroidxTestJunit"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.vAndroidxTestEspresso"
-
-    //Material
-    implementation "com.google.android.material:material:$rootProject.vGoogleMaterial"
-
-    //Timber
-    implementation "com.jakewharton.timber:timber:$vTimber"
+    implementation "androidx.appcompat:appcompat:$androidx_appcompat_version"
+    implementation "com.google.android.material:material:$g_material_version"
 }

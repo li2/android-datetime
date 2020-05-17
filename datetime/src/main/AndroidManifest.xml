@@ -1,5 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="me.li2.android.datetime">
-
-    /
-</manifest>
+<manifest package="me.li2.android.datetime" />
