@@ -1,4 +1,4 @@
-package me.li2.android.datetimesample
+package me.li2.android.datetime.sample
 
 import android.os.Build
 import android.os.Bundle
@@ -11,6 +11,7 @@ import com.jakewharton.threetenabp.AndroidThreeTen
 import me.li2.android.datetime.Calculator.daysToChristmasEve
 import me.li2.android.datetime.Calculator.daysToNewYear
 import me.li2.android.datetime.Calculator.durationInDaysAndHours
+import me.li2.android.datetime.R
 import me.li2.android.datetime.fullDisplayName
 import me.li2.android.datetime.shortDisplayName
 import me.li2.android.datetime.toStringWithPattern

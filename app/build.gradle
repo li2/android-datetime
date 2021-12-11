@@ -40,9 +40,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':libs:datetime')
+    implementation project(':datetime')
 
     implementation "androidx.appcompat:appcompat:$androidx_appcompat_version"
     implementation "com.google.android.material:material:$g_material_version"
-    implementation "androidx.constraintlayout:constraintlayout:$androidx_constraintlayout_version"
 }

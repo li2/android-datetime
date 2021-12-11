@@ -1,4 +1,3 @@
+include ':datetime'
 include ':app'
-include ':libs:datetime'
-project(':libs:datetime').projectDir = new File('datetime')
 rootProject.name = "Datetime Library"
